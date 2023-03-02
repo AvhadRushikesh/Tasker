@@ -41,10 +41,21 @@
                     <DataTemplate>
                         <Frame BorderColor="Transparent">
                             <HorizontalStackLayout>
-                                <CheckBox IsChecked="{Binding Completed}"
-                                          VerticalOptions="Center"
-                                          Color="{Binding TaskColor, Converter={StaticResource ColorConverter}}"/>
-                                <Label Text="{Binding TaskName}" VerticalOptions="Center"/>
+                                <CheckBox 
+                                    x:Name="checkBox"
+                                    IsChecked="{Binding Completed}"
+                                    VerticalOptions="Center"
+                                    Color="{Binding TaskColor, Converter={StaticResource ColorConverter}}"/>
+                                <Label Text="{Binding TaskName}" VerticalOptions="Center">
+                                    <Label.Triggers>
+                                        <DataTrigger
+                                            Binding="{Binding Source={x:Reference checkBox}, Path=IsChecked}"
+                                            TargetType="Label"
+                                            Value="True">
+                                            <Setter Property="TextDecorations" Value="Strikethrough"/>
+                                        </DataTrigger>
+                                    </Label.Triggers>
+                                </Label>
                             </HorizontalStackLayout>
                         </Frame>
                     </DataTemplate>
