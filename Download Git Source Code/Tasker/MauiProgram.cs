@@ -1,6 +1,4 @@
-﻿using Microsoft.Extensions.Logging;
-
-namespace Tasker;
+﻿namespace Tasker;
 
 public static class MauiProgram
 {
@@ -13,12 +11,8 @@ public static class MauiProgram
 			{
 				fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
 				fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
-				fonts.AddFont("Roboto-Regular.ttf", "Roboto");
-			});
-
-#if DEBUG
-		builder.Logging.AddDebug();
-#endif
+                 fonts.AddFont("Roboto-Regular.ttf", "Roboto");
+            });
 
 		return builder.Build();
 	}
