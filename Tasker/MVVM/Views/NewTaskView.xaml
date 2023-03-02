@@ -31,5 +31,14 @@
                 </DataTemplate>
             </CollectionView.ItemTemplate>
         </CollectionView>
+        <HorizontalStackLayout
+                Grid.Row="2"
+                Margin="10"
+                HorizontalOptions="CenterAndExpand"
+                Spacing="15"
+                VerticalOptions="Center">
+            <Button CornerRadius="15" Text="Add Task"/>
+            <Button CornerRadius="15" Text="Add Category"/>
+        </HorizontalStackLayout>
     </Grid>
 </ContentPage>
