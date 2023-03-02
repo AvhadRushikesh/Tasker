@@ -30,4 +30,18 @@
         <Setter Property="FontAttributes" Value="Bold"/>
     </Style>
 
+
+    <Shadow x:Key="shadow"
+        Brush="#CFD0D4"
+        Opacity="0.6"
+        Radius="15"
+        Offset="10,15"/>
+    
+    <Style TargetType="RoundRectangle">
+        <Setter Property="CornerRadius" Value="10"/>
+        <Setter Property="Fill" Value="white"/>
+        <Setter Property="WidthRequest" Value="200"/>
+        <Setter Property="Shadow" Value="{StaticResource shadow}"/>
+    </Style>
+
 </ResourceDictionary>
