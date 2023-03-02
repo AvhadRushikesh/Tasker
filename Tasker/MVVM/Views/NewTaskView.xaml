@@ -13,7 +13,23 @@
             Grid.Row="1"
             Margin="15"
             ItemsSource="{Binding Categories}">
-
+            <CollectionView.ItemsLayout>
+                <GridItemsLayout
+                    HorizontalItemSpacing="5"
+                    Orientation="Vertical"
+                    Span="2"
+                    VerticalItemSpacing="5"/>
+            </CollectionView.ItemsLayout>
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Frame>
+                        <RadioButton
+                            Content="{Binding CategoryName}"
+                            GroupName="Category"
+                            IsChecked="{Binding IsSelected}"/>
+                    </Frame>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
         </CollectionView>
     </Grid>
 </ContentPage>
